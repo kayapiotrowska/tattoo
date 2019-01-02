@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="js/Chart.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Tattoos in Poland</title>
+</head>
+
+<body>
+
+<style>
+
+  .mychart1 {
+    width:500px;
+    height:300px
+  }
+
+  .mychart2 {
+    width:700px;
+    height:300px
+  }
+
+
+  </style>
+
+  <div class="container mychart1">
+    <canvas id="myChart1" width="500" height="300" style="width:500px; height:300px"></canvas>
+  </div>
+
+  <div class="container mychart2">
+    <canvas id="myChart2" width="500" height="300" style="width:500px; height:300px"></canvas>
+  </div>
+
+  <script>
+
+    let myChart1 = document.getElementById('myChart1').getContext('2d');
+    let myChart2 = document.getElementById('myChart2').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+
+    let PieChart = new Chart(myChart1, {
+      type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['Yes', 'No', 'It`s a secret'],
+        datasets:[{
+          data:[
+          8,
+          91,
+          1
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            '#112F3B',
+            '#D5ADA6',
+            '#6BBAB5'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        cutoutPercentage: 20,
+        title:{
+          display:true,
+          text:'How do Poles respond to the question if they have a tattoo?',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true,
+                        callbacks: {
+                            label: function(tooltipItem, data) {
+                                return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+                            }
+                        }
+        },
+      }
+    });
+
+
+
+    let BubbleChart = new Chart(myChart2, {
+      type:'bubble', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        datasets:[
+
+          {
+          label:["One tattoo"],
+          backgroundColor: 'rgba(53, 92, 125, 0.8)',
+          data:[{
+            x:1,
+            y:51,
+            r:51
+          }]
+        },
+
+        {
+        label:["Two tattoos"],
+        backgroundColor: '#F67280',
+        data:[{
+          x:2,
+          y:30,
+          r:30
+        }]
+      },
+
+      {
+      label:["Three tattoos"],
+      backgroundColor: '#F8B195',
+      data:[{
+        x:3,
+        y:11,
+        r:11
+      }]
+    },
+
+    {
+    label:["Four or more tattoos"],
+    backgroundColor: '#1B0141',
+    data:[{
+      x:4,
+      y:8,
+      r:8
+    }]
+  }
+
+      ]
+
+      },
+      options:{
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 5
+                }
+            }]
+        },
+        title:{
+          display:true,
+          text:'How many tattoos?',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true,
+        },
+      }
+    });
+
+
+
+
+  </script>
+</body>
+</html>
