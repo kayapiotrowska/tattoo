@@ -285,6 +285,14 @@ new WOW().init();
     ]
   },
   options: {
+    tooltips:{
+      enabled:true,
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+                        }
+                    }
+    },
     legend:{
       display:false,
     },
