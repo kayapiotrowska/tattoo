@@ -92,6 +92,7 @@ blockquote h1{
     color: #fff;
     text-align: center;
     justify-content: center;
+    border-bottom: dashed 2px white;
 }
 
   .mychart1 {
