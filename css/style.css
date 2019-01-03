@@ -1,0 +1,146 @@
+/*---------------------------------------
+    body
+-----------------------------------------*/
+
+body {
+    position: relative;
+}
+
+html,body {
+  width: 100%;
+  overflow-x: hidden;
+  left:0;
+  top:0;
+  margin:0;
+  padding:0
+}
+
+html {
+  font-size: 100%;
+}
+
+
+
+
+/*---------------------------------------
+    Typography
+-----------------------------------------*/
+
+h1,h2,h3,h4 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+}
+
+h2 {
+  color: #e44c65;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+p {
+  color: #888;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 34px;
+}
+
+
+/*---------------------------------------
+    Custom Styles
+-----------------------------------------*/
+
+
+blockquote {
+  background-image: url('../img/quote_white.png');
+  background-size: contain;
+  background-repeat: no-repeat no-repeat;
+  background-position: center;
+  color: white;
+  background-size: contain;
+  background-repeat: no-repeat no-repeat;
+  padding: 150px 0;
+}
+
+blockquote h1{
+  margin-left:30%;
+  margin-right:30%;
+}
+
+
+
+#intro {
+    height: 100vh;
+    background: url('../img/background.jpg') no-repeat;
+    background-size: cover;
+    color:white;
+    text-align: center;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+}
+
+  .mychart1 {
+    width:500px;
+    height:300px
+  }
+
+  .mychart2 {
+    width:700px;
+    height:300px
+  }
+
+  .container1{
+    background-color: #142328;
+    min-height: 100vh;
+    color: white;
+  }
+
+  .container2{
+    background-color: white;
+    min-height: 100vh;
+    color: black;
+  }
+
+  .container3{
+    background-color: #62030D;
+    min-height: 100vh;
+    color: white;
+  }
+
+  .container4{
+    background-color: #F1F1F1;
+    min-height: 100vh;
+    color: black;
+  }
+
+
+
+
+
+.textblock {
+padding: 75px;
+margin: 150px 50px;
+border-style: dashed;
+border-width: 2px;
+text-align: justify;
+font-family: 'Oswald', sans-serif;
+text-transform: uppercase;
+font-size: 14px;
+letter-spacing: 4px;
+line-height: 2rem;
+}

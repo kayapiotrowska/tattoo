@@ -4,40 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.css">
   <script src="js/Chart.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="js/wow.js"></script>
+  <link rel="stylesheet" href="css/style.css">
   <title>Tattoos in Poland</title>
 </head>
 
 <body>
 
-<style>
 
-  .mychart1 {
-    width:500px;
-    height:300px
-  }
-
-  .mychart2 {
-    width:700px;
-    height:300px
-  }
-
-
-  </style>
-
-  <div class="container mychart1">
-    <canvas id="myChart1" width="500" height="300" style="width:500px; height:300px"></canvas>
+  <div id="intro">
+      <blockquote><h1>My body is my journal, and my tattoos are my story.</h1> </blockquote>
   </div>
 
-  <div class="container mychart2">
-    <canvas id="myChart2" width="500" height="300" style="width:500px; height:300px"></canvas>
+
+<div class="container-flex container1">
+  <div class="row align-items-center">
+    <div class="col-6">
+      <div class="mychart1 wow fadeInRight">
+      <canvas id="myChart1" width="500" height="300" ></canvas>
+    </div>
+  </div>
+    <div class="col-6">
+      <div class="textblock" style="border-color: white;">When Nathan Boon started working as a tattoo artist about 10 years ago, tattoo parlours
+        could be found in back alleys or on the outskirts of town. Over the years, as trends have
+        moved from tribal designs on the lower back to geometric designs on the sternum, he has
+        seen more shops open up in central business districts. “When I first started, you had to
+        go and find someone to tattoo you. Now it’s in your face,” he said.</div>
+    </div>
+
+
+  <div class="container-flex container2">
+    <div class="row align-items-center">
+      <div class="col-6">
+        <div class="textblock" style="border-color: black;">The Manchester Tattoo Emporium, where he works, is in the city’s most
+          central shopping area. On a weekday afternoon business is booming in the studio, which opened
+          four years ago. The company has three other studios – the first of which opened six years ago
+          and the newest one a year ago. “There are more kids now than ever who have tattoos,” said Boon.
+          “It’s not a taboo thing any more.”
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mychart2 wow fadeInLeft">
+        <canvas id="myChart2" width="500" height="300" ></canvas>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <script>
+
+
+
+  <div class="container-flex container3">
+    <div class="row align-items-center">
+      <div class="col-6">
+        <div class="mychart3 wow fadeInRight" style="margin-left:20px">
+        <canvas id="myChart3" width="200"  ></canvas>
+      </div>
+    </div>
+      <div class="col-6">
+        <div class="textblock" style="border-color: white;">In 2015, a survey found that a fifth of all British adults
+          were inked, with 30% of 25- to 39-year-olds having at least one tattoo. In 2016, a US poll found that 29% of
+          people had a tattoo, up from roughly two in 10 (21%) four years before. Nearly half (47%) of millennials –
+          people born between born between 1982 and 2004 – said they had one.<br><br>
+          It is hard to find a modern pop star without a tattoo. (...)Ed Sheeran, 27, got his first tattoo aged 18 and now has over 60. More recent
+          additions include a large lion’s face on his chest and a Heinz ketchup label on his arm.</div>
+      </div>
+
+
+      <div class="container-flex container4">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <div class="textblock" style="border-color: black;">The Manchester Tattoo Emporium, where he works, is in the city’s most
+              central shopping area. On a weekday afternoon business is booming in the studio, which opened
+              four years ago. The company has three other studios – the first of which opened six years ago
+              and the newest one a year ago. “There are more kids now than ever who have tattoos,” said Boon.
+              “It’s not a taboo thing any more.”
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="mychart4 wow fadeInLeft">
+            <canvas id="myChart4" width="400" height="300" ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+<script>
+new WOW().init();
+</script>
+
+<script>
 
     let myChart1 = document.getElementById('myChart1').getContext('2d');
     let myChart2 = document.getElementById('myChart2').getContext('2d');
+    let myChart3 = document.getElementById('myChart3').getContext('2d');
+    let myChart4 = document.getElementById('myChart4').getContext('2d');
 
     // Global Options
     Chart.defaults.global.defaultFontFamily = 'Lato';
@@ -55,7 +124,6 @@
           91,
           1
           ],
-          //backgroundColor:'green',
           backgroundColor:[
             '#112F3B',
             '#D5ADA6',
@@ -71,7 +139,7 @@
         cutoutPercentage: 20,
         title:{
           display:true,
-          text:'How do Poles respond to the question if they have a tattoo?',
+          text:'How many Poles have tattoos?',
           fontSize:25
         },
         legend:{
@@ -81,14 +149,7 @@
             fontColor:'#000'
           }
         },
-        layout:{
-          padding:{
-            left:50,
-            right:0,
-            bottom:0,
-            top:0
-          }
-        },
+
         tooltips:{
           enabled:true,
                         callbacks: {
@@ -166,7 +227,7 @@
         },
         title:{
           display:true,
-          text:'How many tattoos?',
+          text:'How many tattoos do they have?',
           fontSize:25
         },
         legend:{
@@ -176,14 +237,7 @@
             fontColor:'#000'
           }
         },
-        layout:{
-          padding:{
-            left:50,
-            right:0,
-            bottom:0,
-            top:0
-          }
-        },
+
         tooltips:{
           enabled:true,
         },
@@ -192,7 +246,62 @@
 
 
 
+  let HorizontalChart =  new Chart(myChart3, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["definetely yes", "rather yes", "rather no", "definetely no", "hard to say"],
+          datasets: [
+            {
+              label: " [%]",
+              backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+              data: [41,37,11,5,6]
+            }
+          ]
+        },
+        options: {
+          legend:{
+            display:false,
+          },
+          title: {
+            display: true,
+            text: 'Are they happy with their tattoo?',
+            fontSize:25
+          }
+        }
+    });
+
+
+
+
+    let LineChart =  new Chart(myChart4, {
+  type: 'line',
+  data: {
+    labels: ['1950-1960','1960-1970','1970-1980','1980-1990','1990-2000','2000-2010','2010-2017'],
+    datasets: [{
+        data: [4,7,7,3,13,27,39],
+        borderColor: "#3e95cd",
+        fill: false
+      },
+    ]
+  },
+  options: {
+    legend:{
+      display:false,
+    },
+    title: {
+      display: true,
+      text: 'When did they get their first tattoo?'
+    }
+  }
+});
+
+
+
 
   </script>
+
+
+
+
 </body>
 </html>
