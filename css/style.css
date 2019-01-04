@@ -95,16 +95,6 @@ blockquote h1{
     border-bottom: dashed 2px white;
 }
 
-  .mychart1 {
-    width:500px;
-    height:300px
-  }
-
-  .mychart2 {
-    width:700px;
-    height:300px
-  }
-
   .container1{
     background-color: #142328;
     min-height: 100vh;
@@ -131,8 +121,6 @@ blockquote h1{
 
 
 
-
-
 .textblock {
 padding: 75px;
 margin: 150px 50px;
@@ -144,4 +132,31 @@ text-transform: uppercase;
 font-size: 14px;
 letter-spacing: 4px;
 line-height: 2rem;
+}
+
+
+#navigateup {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: black;
+  color:white;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  vertical-align: middle;
+  border: solid 2px black;
+  position:  fixed;
+  z-index:10;
+  position: fixed;
+  bottom: 20px;
+  left:50%;
+  font-size: 150%;
+}
+
+#navigateup:hover {
+  background-color: #A9A9A9;
+  color: white;
+  transform: scale(1.2);
 }
